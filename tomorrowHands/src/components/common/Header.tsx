@@ -35,7 +35,7 @@ export default function Header() {
   return (
     <header
       className={twJoin(
-        "fixed z-40 flex w-dvw items-center justify-center transition-all duration-300",
+        "fixed inset-x-0 top-0 z-40 flex w-dvw items-center justify-center transition-all duration-300",
         scrolled ? "bg-white shadow-md" : "shadow-none",
       )}
     >
