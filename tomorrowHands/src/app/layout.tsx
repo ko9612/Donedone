@@ -3,6 +3,7 @@ import { Roboto, Comfortaa } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
+import TopButton from "@/components/common/TopButton";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -28,10 +29,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.className} ${logo.variable} antialiased`}>
+      <body
+        className={`${roboto.className} ${logo.variable} max-w-screen-[1920px] mx-auto flex min-h-screen flex-col`}
+      >
         <Header />
-        {children}
+        <main className="flex flex-grow flex-col">{children}</main>
         <Footer />
+        <TopButton />
       </body>
     </html>
   );
