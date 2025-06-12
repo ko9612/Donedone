@@ -1,26 +1,72 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.font-logo {
+  font-family: var(--font-logo) !important;
+  letter-spacing: -0.05em;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  * {
+    @apply m-0 box-border p-0;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  a {
+    @apply text-inherit no-underline;
+  }
+
+  menu,
+  ol,
+  ul {
+    @apply list-none;
+  }
+
+  img,
+  video {
+    @apply max-w-full align-middle;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  input:focus {
+    @apply outline-none;
+  }
+
+  button:focus {
+    @apply outline-none;
+  }
+
+  table {
+    @apply border-collapse;
+  }
+
+  address,
+  i,
+  em {
+    font-style: normal;
+  }
+
+  button {
+    @apply cursor-pointer;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .blind {
+    @apply absolute top-[-9999px];
+  }
+}
+
+/* common color */
+@theme {
+  --color-tom-main: oklch(0.7474 0.1334 252.65);
+  --color-tom-border: oklch(0.82 0 0);
+  --color-tom-text: oklch(0.49 0.073 286.36);
+}
+
+@layer utilities {
 }
